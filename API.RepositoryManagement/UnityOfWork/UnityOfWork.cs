@@ -21,7 +21,8 @@ namespace API.RepositoryManagement.UnityOfWork
         private UserLoginRepository _loginRepository;
         public ILoginRepository UserLoginRepository => _loginRepository ?? (_loginRepository = new UserLoginRepository(_dbContext));
         #endregion
-
+        private ModuleRepository _moduleRepository;
+        public IModuleRepository ModuleRepository => _moduleRepository ?? (_moduleRepository = new ModuleRepository(_dbContext));
         #region Readonlys
 
         private readonly NexKraftDbContext _dbContext;

@@ -12,6 +12,4 @@ public partial class Customer
     public string? Country { get; set; }
 
     public string? Email { get; set; }
-
-    public virtual ICollection<UserLogin> UserLogins { get; } = new List<UserLogin>();
 }

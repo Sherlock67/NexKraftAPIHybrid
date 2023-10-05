@@ -35,7 +35,6 @@
     <Folder Include="Databases\MsSql\" />
     <Folder Include="Databases\PostGreSql\" />
     <Folder Include="ORM\PostgreDataModel\" />
-    <Folder Include="ORM\MsSQLDataModels\" />
     <Folder Include="ORM\MySqlDataModel\" />
   </ItemGroup>
 

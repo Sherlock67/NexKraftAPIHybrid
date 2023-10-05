@@ -42,7 +42,7 @@ namespace API.BusinessLogic.Sevices.Login
                         {
                             UserName = loggedUser.UserName,
                             Password = loggedUser.Password,
-                            Email = (await _unitOfWork.CustomerRepository.GetCustomerInfo((int)loggedUser.CustomerId))?.Email,
+                            //Email = (await _unitOfWork.CustomerRepository.GetCustomerInfo((int)loggedUser.CustomerId))?.Email,
                             MachineName = userAgent,
                             RemoteIpAddress = remoteIpAddress,
                             CustomerID = Convert.ToInt32(loggedUser.CustomerId)
