@@ -1,24 +1,8 @@
-﻿using API.Data.ADO.NET;
-using API.ViewModel.ViewModels.Common;
-using API.Settings;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using API.ViewModel.ViewModels.Common;
 using API.ViewModel.ViewModels.Customers;
 using API.Data.ORM.MsSQLDataModels;
 using API.BusinessLogic.Interface.Customer;
-using Newtonsoft.Json;
-using Azure;
-using System.Xml;
-using API.Data.MySQL;
-using API.Data.PostGreSQL;
-using Npgsql;
-using System.Data;
 using API.RepositoryManagement.UnityOfWork.Interfaces;
-using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
 
 namespace API.BusinessLogic.Services.Customers
 {

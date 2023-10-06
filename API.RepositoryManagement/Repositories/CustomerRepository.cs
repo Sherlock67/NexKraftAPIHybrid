@@ -1,17 +1,7 @@
 ﻿using API.RepositoryManagement.Base;
-using API.RepositoryManagement.Base.Interfaces;
 using API.RepositoryManagement.Repositories.Interfaces;
 using API.Data.ORM.MsSQLDataModels;
 using API.ViewModel.ViewModels.Customers;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mysqlx.Crud;
-using Azure;
-using System.Drawing.Printing;
 
 namespace API.RepositoryManagement.Repositories
 {

@@ -1,9 +1,6 @@
 ﻿using API.ViewModel.ViewModels.Customers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using API.ViewModel.ViewModels.Module;
+using API.ViewModel.ViewModels.Modules;
 
 namespace API.BusinessLogic.Interface.Module
 {
@@ -11,8 +8,8 @@ namespace API.BusinessLogic.Interface.Module
     {
       //  Task<object?> DeleteCustomer(int id);
       //  Task<object?> GetCustomerByCustomerID(int id);
-        Task<object?> GetModuleList(CustomerData param);
-        Task<object?> CreateModule(CreateCustomerModel data);
+        Task<object?> GetModuleList(ModuleData param);
+        Task<object?> CreateModule(vmModule data);
         //Task<object?> UpdateCustomer(vmCustomerUpdate data);
     }
 }

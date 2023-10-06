@@ -1,9 +1,4 @@
 ﻿using API.RepositoryManagement.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace API.RepositoryManagement.UnityOfWork.Interfaces
 {
@@ -13,6 +8,7 @@ namespace API.RepositoryManagement.UnityOfWork.Interfaces
 
         ICustomerRepository CustomerRepository { get; }
         ILoginRepository UserLoginRepository { get; }
+        IModuleRepository ModuleRepository { get; }
 
         #endregion
 

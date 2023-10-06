@@ -1,12 +1,8 @@
 ﻿using API.Data.ORM.MsSQLDataModels;
 using API.RepositoryManagement.Base;
 using API.RepositoryManagement.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using API.ViewModel.ViewModels.Module;
+using API.ViewModel.ViewModels.Modules;
 
 namespace API.RepositoryManagement.Repositories
 {
@@ -16,22 +12,32 @@ namespace API.RepositoryManagement.Repositories
         public ModuleRepository(NexKraftDbContext dbContext) : base(dbContext)
         {
         }
-        public async Task<Module?> CreateModule(Module entity)
+        public async Task<List<Module>> GetModuleList(ModuleData param)
         {
-            var obj = await NexKraftDbContext.Modules.AddAsync(entity);
-            NexKraftDbContext.SaveChanges();
-            return obj.Entity;
+            return (await GetManyAsync(
+                filter: x => (
+
+                x.ModuleName == param.Search
+
+                ),
+                orderBy: x => x.OrderBy(t => t.ModuleName),
+                top: param.PageSize,
+                skip: (param.PageNumber - 1) * param.PageSize
+                )).ToList();
         }
-        public IEnumerable<Module> GetAll()
+
+        public async Task<Module> CreateModule(vmModule model)
         {
-            try
+            Module objModule = new Module()
             {
-                return NexKraftDbContext.Modules.ToList();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+                ModuleName = model.ModuleName,
+                UpdatedBy = model.UpdatedBy,
+                ÇreatedBy = model.ÇreatedBy
+            };
+            return await AddAsync(objModule);
+
+            //throw new NotImplementedException();
         }
+
     }
 }
