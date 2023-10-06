@@ -7,7 +7,6 @@ using API.Data.PostGreSQL;
 using API.ServiceRegister;
 using API.Settings;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
 using API.Data.Oracle;
 
 var builder = WebApplication.CreateBuilder(args);

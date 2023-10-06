@@ -1,5 +1,7 @@
 ﻿using API.BusinessLogic.Interface.Customer;
+using API.BusinessLogic.Interface.Module;
 using API.BusinessLogic.Services.Customers;
+using API.BusinessLogic.Services.Modules;
 using API.BusinessLogic.Sevices.Login;
 
 namespace API.ServiceRegister
@@ -15,7 +17,7 @@ namespace API.ServiceRegister
             builder.Services.AddScoped<ICustomerServices, CustomerServices>();
             //builder.Services.AddScoped<ICustomerServicesOld, CustomerServicesOld>();
             builder.Services.AddScoped<ILoginServices, LoginServices>();
-
+            builder.Services.AddScoped<IModuleServices,ModuleService>();
         }
     }
 }
