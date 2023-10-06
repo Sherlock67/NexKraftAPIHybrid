@@ -38,6 +38,12 @@ namespace API.RepositoryManagement.Repositories
 
             //throw new NotImplementedException();
         }
+        public async Task<bool> DeleteModule(int id)
+        {
+            return Convert.ToBoolean(DeleteAsync(await GetByIdAsync(id)).IsCompleted);
+        }
+
+
 
     }
 }

@@ -9,7 +9,7 @@ namespace API.RepositoryManagement.UnityOfWork.Interfaces
         ICustomerRepository CustomerRepository { get; }
         ILoginRepository UserLoginRepository { get; }
         IModuleRepository ModuleRepository { get; }
-
+        
         #endregion
 
         #region Methods

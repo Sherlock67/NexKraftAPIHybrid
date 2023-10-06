@@ -1,4 +1,5 @@
 ﻿using API.BusinessLogic.Interface.Module;
+using API.Filters;
 using API.ViewModel.ViewModels.Module;
 using API.ViewModel.ViewModels.Modules;
 using Microsoft.AspNetCore.Cors;
@@ -35,7 +36,7 @@ namespace API.Controllers
             return resdata;
 
         }
-        [HttpGet("[action]")]//Authorizations        
+        [HttpGet("[action]")]       
         public async Task<object?> GetModuleList([FromQuery] ModuleData param)
         {
             object? data = null;
@@ -53,7 +54,6 @@ namespace API.Controllers
 
                     memoryCache.Set("CacheTime", data, cacheEntryOptions);
                 }
-
             }
             catch (Exception ex)
             {
@@ -63,6 +63,20 @@ namespace API.Controllers
             {
                 data
             };
+        }
+        [HttpDelete("DeleteModule/{id:int}")]
+        public async Task<object?> DeleteModule(int id)
+        {
+            object? resdata = null;
+            try
+            {
+                resdata = await moduleServices.DeleteModule(id);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            return resdata;
         }
     }
 }

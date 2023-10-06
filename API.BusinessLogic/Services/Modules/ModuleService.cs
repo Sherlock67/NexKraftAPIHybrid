@@ -36,6 +36,27 @@ namespace API.BusinessLogic.Services.Modules
             };
         }
 
+        public async Task<object?> DeleteModule(int id)
+        {
+            string message = string.Empty; bool resstate = false; 
+            try
+            {
+                await _unitOfWork.ModuleRepository.DeleteModule(id);
+                await _unitOfWork.CompleteAsync();
+                message = "Deleted Successfully.";
+            }
+            catch (Exception ex)
+            {
+                message = "Failed."; resstate = false;
+            }
+            return new
+            {
+                message,
+                isSuccess = resstate,
+            };
+            // throw new NotImplementedException();
+        }
+
         public async Task<object?> GetModuleList(ModuleData param)
         {
             List<Module>? listModules = new List<Module>();

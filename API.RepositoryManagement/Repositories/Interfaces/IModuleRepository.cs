@@ -13,5 +13,7 @@ namespace API.RepositoryManagement.Repositories.Interfaces
     {
         Task<Module> CreateModule(vmModule model);
         Task<List<Module?>> GetModuleList(ModuleData param);
+        Task<bool> DeleteModule(int id);
+
     }
 }
