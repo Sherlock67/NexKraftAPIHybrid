@@ -12,6 +12,11 @@ namespace API.RepositoryManagement.Repositories
         public ModuleRepository(NexKraftDbContext dbContext) : base(dbContext)
         {
         }
+        public async Task<Module?> GetModuleInfo(int moduleId)
+        {
+            return await GetByIdAsync(moduleId);
+        }
+
         public async Task<List<Module>> GetModuleList(ModuleData param)
         {
             return (await GetManyAsync(
@@ -43,7 +48,10 @@ namespace API.RepositoryManagement.Repositories
             return Convert.ToBoolean(DeleteAsync(await GetByIdAsync(id)).IsCompleted);
         }
 
+        public async Task<Module> UpdateModule(vmModule model)
+        {
+             throw new NotImplementedException();
 
-
+        }
     }
 }

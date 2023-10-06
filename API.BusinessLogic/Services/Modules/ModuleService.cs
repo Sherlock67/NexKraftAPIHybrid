@@ -75,5 +75,40 @@ namespace API.BusinessLogic.Services.Modules
             };
             
         }
+
+        public async Task<object?> UpdateModule(vmModule module)
+        {
+
+            string message = string.Empty; bool resstate = false; Module objModule = new();
+            try
+            {
+
+                objModule = await _unitOfWork.ModuleRepository.GetModuleInfo(module.ModuleId);
+                if(objModule != null)
+                {
+                    objModule.ModuleName = module.ModuleName;
+                    //objModule.ÇreatedBy = module.ÇreatedBy;
+                    objModule.UpdatedBy = module.UpdatedBy;
+                    await _unitOfWork.CompleteAsync();
+                    message = "Updated Successfully.";
+                    resstate = true;
+                }
+                else
+                {
+                    message = "Failed."; resstate = false;
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+                message = "Failed."; resstate = false;
+            }
+            return new
+            {
+                message,
+                isSuccess = resstate
+            };
+        }
     }
 }

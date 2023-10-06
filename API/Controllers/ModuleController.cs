@@ -78,5 +78,19 @@ namespace API.Controllers
             }
             return resdata;
         }
+        [HttpPut("UpdateModule"),Authorizations]
+        public async Task<object?> UpdateModule(vmModule module)
+        {
+            object? resdata = null;
+            try
+            {
+                resdata = await moduleServices.UpdateModule(module);
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            return resdata;
+        }
     }
 }
