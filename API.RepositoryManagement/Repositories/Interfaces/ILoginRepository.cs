@@ -1,4 +1,5 @@
 ﻿using API.Data.ORM.MsSQLDataModels;
+using API.ViewModel.ViewModels.Customers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace API.RepositoryManagement.Repositories.Interfaces
     public interface ILoginRepository
     {
         Task<UserLogin?> GetUserInfo(string userName, string password);
+     
     }
 }

@@ -2,6 +2,7 @@
 using API.RepositoryManagement.Repositories.Interfaces;
 using API.Data.ORM.MsSQLDataModels;
 using Microsoft.EntityFrameworkCore;
+using API.ViewModel.ViewModels.Customers;
 
 namespace API.RepositoryManagement.Repositories
 {
@@ -15,5 +16,7 @@ namespace API.RepositoryManagement.Repositories
         {
             return (await GetManyAsync(filter: u => u.UserName == userName && u.Password==password)).FirstOrDefault();
         }
+
+      
     }
 }
